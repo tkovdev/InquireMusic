@@ -1,0 +1,7 @@
+{
+	"ClientID":"",
+	"ClientSecret":"",
+	"APITokenEndpoint":"https://accounts.spotify.com/api/token",
+	"APIEndpoint":"https://api.spotify.com/v1/",
+	"TokenStorage":"./token-storage.json"
+}
