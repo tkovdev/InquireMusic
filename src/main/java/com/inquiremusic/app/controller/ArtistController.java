@@ -49,6 +49,7 @@ public class ArtistController {
 		}
 		//add all the artist listitems to the scrollpane
 		view.getMainPanel().setListResults(result);
+
 	}
 	
 	/**
@@ -88,15 +89,22 @@ public class ArtistController {
 		artist.setAlbums(albums);
 		artist.setTracks(tracks);
 		
+		//set the text of the text area to display the html
 		artistTab.getTextArea().setText(artist.toHtmlString());
 		albumTab.getTextArea().setText(albumResults);
 		trackTab.getTextArea().setText(trackResults);
 		
+		//reset the scrollpanes to start at the top
+		artistTab.getScrollPane().getVerticalScrollBar().setValue(0);
+		albumTab.getScrollPane().getVerticalScrollBar().setValue(0);
+		trackTab.getScrollPane().getVerticalScrollBar().setValue(0);
 		
+		//add the tabs to the parent to display each result as a separate tab
 		view.getMainPanel().getPanelDetail().getTabbedDetailPaneTab().add("Artist", artistTab);
 		view.getMainPanel().getPanelDetail().getTabbedDetailPaneTab().add("Albums", albumTab);
 		view.getMainPanel().getPanelDetail().getTabbedDetailPaneTab().add("Tracks", trackTab);
 		
+		//default the selected tab to show Artist first since that was selected
 		view.getMainPanel().getPanelDetail().getTabbedDetailPaneTab().setSelectedIndex(0);
 	}
 

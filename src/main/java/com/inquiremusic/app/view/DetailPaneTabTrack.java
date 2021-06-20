@@ -26,5 +26,13 @@ public class DetailPaneTabTrack extends JPanel {
 	public JEditorPane getTextArea() {
 		return textArea;
 	}
+	
+	public void resetScrollHeight() {
+		textScrollable.getVerticalScrollBar().setValue(0);
+	}
+	
+	public JScrollPane getScrollPane() {
+		return textScrollable;
+	}
 
 }

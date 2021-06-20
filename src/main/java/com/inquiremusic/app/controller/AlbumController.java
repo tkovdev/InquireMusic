@@ -83,15 +83,19 @@ public class AlbumController {
 		//add the artist data to a tab
 		if(artist != null) {			
 			artistTab.getTextArea().setText(artist.toHtmlString());
-			view.getMainPanel().getPanelDetail().getTabbedDetailPaneTab().add("Artist", artistTab);
 		}
-		
-		//add the album data to a tab
+		//set the text of the text area to display the html
 		albumTab.getTextArea().setText(album.toHtmlString());
-		view.getMainPanel().getPanelDetail().getTabbedDetailPaneTab().add("Album", albumTab);
-
-		//add the track data to a tab
 		trackTab.getTextArea().setText(trackResults);
+
+		//reset the scrollpanes to start at the top
+		artistTab.getScrollPane().getVerticalScrollBar().setValue(0);
+		albumTab.getScrollPane().getVerticalScrollBar().setValue(0);
+		trackTab.getScrollPane().getVerticalScrollBar().setValue(0);
+		
+		//add the tabs to the parent to display each result as a separate tab
+		view.getMainPanel().getPanelDetail().getTabbedDetailPaneTab().add("Artist", artistTab);
+		view.getMainPanel().getPanelDetail().getTabbedDetailPaneTab().add("Album", albumTab);
 		view.getMainPanel().getPanelDetail().getTabbedDetailPaneTab().add("Tracks", trackTab);
 		
 		//default the selected tab to show Album first since that was selected

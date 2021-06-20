@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.JList;
 import javax.swing.event.ListSelectionEvent;
@@ -66,15 +67,14 @@ public class MainController {
 	 */
 	public class ListListener implements ListSelectionListener{
 		//keep track of which list item was selected
-		private int selectedItem = -1;
+		private ListItem selectedItem = null;
 		@Override
 		public void valueChanged(ListSelectionEvent e) {
 			//On SearchResult item click
 			if(e.getSource() == view.getMainPanel().getListResults()) {
 				JList<ListItem> list = view.getMainPanel().getListResults();
-				
 				//only react when the list selection has changed
-				if(this.selectedItem != list.getSelectedIndex()) {
+				if(list.getSelectedValue() != null && list.getSelectedValue() != selectedItem) {
 					//get the type of search that was performed (Artist, Album, Track)
 					String type = view.getMainPanel().getCbxSearchType().getSelectedItem().toString();
 					String id = "";
@@ -98,7 +98,7 @@ public class MainController {
 								break;
 						}
 						//change the list selection to compare the next list selection against
-						this.selectedItem = list.getSelectedIndex();
+						this.selectedItem = list.getSelectedValue();
 					}
 				}
 			}
@@ -138,6 +138,7 @@ public class MainController {
 		public void actionPerformed(ActionEvent e) {
 			Object source = e.getSource();
 			if(source == view.getMainPanel().getBtnSearch()){
+				view.getMainPanel().getPanelDetail().getTabbedDetailPaneTab().removeAll();
 				//Get the dropdown selection to determine what the search is for
 				String type = view.getMainPanel().getCbxSearchType().getSelectedItem().toString();
 				//Get the user entered text to determine what name to look for
@@ -161,6 +162,11 @@ public class MainController {
 					//search came back null, show error
 					view.getErrorDialog().setVisible(true);
 				}
+			}else if(source == view.getMainPanel().getCbxSearchType()) {
+				//if the dropdown changes, remove all current results
+				view.getMainPanel().getTextSearch().setText(null);
+				view.getMainPanel().setListResults(new ArrayList<ListItem>());
+				view.getMainPanel().getPanelDetail().getTabbedDetailPaneTab().removeAll();
 			}
 		}
 	}

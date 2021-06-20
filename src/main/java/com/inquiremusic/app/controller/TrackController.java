@@ -74,12 +74,19 @@ public class TrackController {
 		
 		if(artist != null) {			
 			artistTab.getTextArea().setText(artist.toHtmlString());
-			view.getMainPanel().getPanelDetail().getTabbedDetailPaneTab().add("Artist", artistTab);
 		}
-		albumTab.getTextArea().setText(album.toHtmlString());
-		view.getMainPanel().getPanelDetail().getTabbedDetailPaneTab().add("Album", albumTab);
 
+		albumTab.getTextArea().setText(album.toHtmlString());
 		trackTab.getTextArea().setText(track.toHtmlString());
+
+		//reset the scrollpanes to start at the top
+		artistTab.getScrollPane().getVerticalScrollBar().setValue(0);
+		albumTab.getScrollPane().getVerticalScrollBar().setValue(0);
+		trackTab.getScrollPane().getVerticalScrollBar().setValue(0);
+				
+		//add the tabs to the parent to display each result as a separate tab
+		view.getMainPanel().getPanelDetail().getTabbedDetailPaneTab().add("Artist", artistTab);
+		view.getMainPanel().getPanelDetail().getTabbedDetailPaneTab().add("Album", albumTab);
 		view.getMainPanel().getPanelDetail().getTabbedDetailPaneTab().add("Track", trackTab);
 		
 		view.getMainPanel().getPanelDetail().getTabbedDetailPaneTab().setSelectedIndex(2);

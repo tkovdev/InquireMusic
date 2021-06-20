@@ -27,5 +27,9 @@ public class DetailPaneTabArtist extends JPanel {
 	public JEditorPane getTextArea() {
 		return textArea;
 	}
+	
+	public JScrollPane getScrollPane() {
+		return textScrollable;
+	}
 
 }

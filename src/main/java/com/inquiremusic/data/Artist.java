@@ -54,9 +54,15 @@ public class Artist {
 		result += "name: " + this.name + "\n";
 		result += "genres: " + this.genres + "\n";
 		result += "popularity: " + this.popularity + "\n";
-		result += "albums: " + this.albums + "\n";
-		result += "tracks: " + this.tracks + "\n";
-		result += "top tracks: " + this.topTracks + "\n";
+		if(this.albums.size() > 0) {			
+			result += "albums: " + this.albums + "\n";
+		}
+		if(this.tracks.size() > 0) {
+			result += "tracks: " + this.tracks + "\n";
+		}
+		if(this.topTracks.size() > 0) {
+			result += "top tracks: " + this.topTracks + "\n";
+		}
 		return result;
 	}
 	
@@ -83,8 +89,12 @@ public class Artist {
 		}
 		result += "</li>";
 		result += "<li> <b>Popularity:</b> " + (this.popularity != 0 ? this.popularity : "n/a") + "</li>";
-		result += "<li> <b>Number of Albums:</b> " + (this.albums != null ? this.albums.size() : 0) + "</li>";
-		result += "<li> <b>Number of Tracks:</b> " + (this.tracks != null ? this.tracks.size() : 0) + "</li>";
+		if(this.albums != null && this.albums.size() > 0) {
+			result += "<li> <b>Number of Albums:</b> " + this.albums.size() + "</li>";
+		}
+		if(this.tracks != null && this.tracks.size() > 0) {
+			result += "<li> <b>Number of Tracks:</b> " + this.tracks.size() + "</li>";
+		}
 		result += "</ul>";
 		if(this.topTracks != null) {
 			result += "<hr />";

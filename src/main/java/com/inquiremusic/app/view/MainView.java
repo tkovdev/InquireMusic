@@ -16,7 +16,6 @@ import com.inquiremusic.app.controller.MainController.KeyboardListener;
  */
 public class MainView extends JFrame{
 	protected MainPanel panelMain;
-	protected JOptionPane errorPane;
 	protected JDialog errorDialog;
 
 	/**
@@ -29,11 +28,11 @@ public class MainView extends JFrame{
 		getContentPane().setLayout(new GridLayout(0, 1, 0, 0));
 		panelMain = new MainPanel();
 		
-		errorPane = new JOptionPane("Error during execution, please try again later.");
+		JOptionPane errorPane = new JOptionPane("Error during execution, please try again later.");
 		errorPane.setOptionType(JOptionPane.CLOSED_OPTION);
 		errorPane.setMessageType(JOptionPane.ERROR_MESSAGE);
 		errorDialog = errorPane.createDialog("Error");
-		
+				
 		getRootPane().setDefaultButton(this.getMainPanel().btnSearch);
 		
 		getContentPane().add(panelMain);
@@ -62,6 +61,7 @@ public class MainView extends JFrame{
 		panelMain.btnSearch.addActionListener(listener); 
 		panelMain.listResults.addListSelectionListener(listListener);
 		panelMain.textSearch.addKeyListener(keyboardListener);
+		panelMain.cbxSearchType.addActionListener(listener);
 	}
 	
 }
