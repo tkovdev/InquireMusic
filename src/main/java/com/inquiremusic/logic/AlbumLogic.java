@@ -67,7 +67,6 @@ public class AlbumLogic {
 		}else if (release_precision.equals("day")){
 			result.setReleaseDate(LocalDate.parse(res.getString("release_date")));				
 		}
-		result.setPopularity(Double.parseDouble(res.get("popularity").toString()));
 		result.setTotalTracks(res.getInt("total_tracks"));
 		
 		Artist artist = new Artist();

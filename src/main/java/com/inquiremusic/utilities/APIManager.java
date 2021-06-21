@@ -181,6 +181,7 @@ public final class APIManager {
 			this._logger.error("error when accessing specified token file");
 			System.exit(1);
 		}
+		//write token information to new JSON object
 		JsonObjectBuilder jb = Json.createObjectBuilder();
 		jb.add("access_token", this._apiToken);
 		jb.add("token_type", this._tokenType);
@@ -188,6 +189,7 @@ public final class APIManager {
 		jb.add("date_retrieved", String.valueOf(this._dateRetrieved));
 		JsonObject json = jb.build();
 		try {
+			//write json to file
 			jw.writeObject(json);
 		}catch(JsonException e) {
 			this._logger.error("error when writing to specified token file");

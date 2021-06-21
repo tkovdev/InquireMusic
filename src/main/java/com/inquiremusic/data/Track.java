@@ -11,7 +11,6 @@ import java.util.concurrent.TimeUnit;
 public class Track{
 	private String id;
 	private String name;
-	private double popularity;
 	private int trackNumber;
 	private long duration;
 	private boolean isExplicit;
@@ -30,7 +29,6 @@ public class Track{
 	 * Track object that provides a filled instance of the object.
 	 * @param id
 	 * @param name
-	 * @param popularity
 	 * @param albums
 	 * @param tracks
 	 * @param trackNumber
@@ -39,10 +37,9 @@ public class Track{
 	 * @param album
 	 * @param artist
 	 */
-	public Track(String id, String name, double popularity, ArrayList<Album> albums, ArrayList<Track> tracks, int trackNumber, long duration, boolean isExplicit, Album album, Artist artist) {
+	public Track(String id, String name, ArrayList<Album> albums, ArrayList<Track> tracks, int trackNumber, long duration, boolean isExplicit, Album album, Artist artist) {
 		 this.id = id;
 		 this.name = name;
-		 this.popularity = popularity;
 		 this.trackNumber = trackNumber;
 		 this.duration = duration;
 		 this.isExplicit = isExplicit;
@@ -59,7 +56,6 @@ public class Track{
 		String result = "";
 		result += "id: " + this.id + "\n";
 		result += "name: " + this.name + "\n";
-		result += "popularity: " + this.popularity + "\n";
 		result += "track number: " + this.trackNumber + "\n";
 		result += "duration: " + this.duration + "\n";
 		result += "is explicit: " + this.isExplicit + "\n";
@@ -91,7 +87,6 @@ public class Track{
 			    TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(this.duration))) : "n/a") + "</li>";
 		result += "<li> <b>Track Number:</b> " + (this.trackNumber > 0 ? this.trackNumber : "n/a") + "</li>";
 		result += "<li> <b>Explicit:</b> " + (this.isExplicit != false ? "Yes" : "No") + "</li>";
-		result += "<li> <b>Popularity:</b> " + (this.popularity != 0 ? this.popularity : "n/a") + "</li>";
 		result += "</ul>";
 		return result;
 	}
@@ -102,10 +97,6 @@ public class Track{
 
 	public String getName() {
 		return name;
-	}
-
-	public double getPopularity() {
-		return popularity;
 	}
 
 	public int getTrackNumber() {
@@ -134,10 +125,6 @@ public class Track{
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public void setPopularity(double popularity) {
-		this.popularity = popularity;
 	}
 
 	public void setTrackNumber(int trackNumber) {

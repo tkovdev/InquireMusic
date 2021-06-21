@@ -65,7 +65,7 @@ public class ConfigurationSettings {
 	 * @param key - String of the specific setting to return
 	 * @return String of the retrieved setting
 	 */
-	public String getSetting(String key) {
+	public String getSetting(String key) throws NullPointerException, ClassCastException {
 		this._logger.debug(">> ConfigruationSettings.getSetting('"+key+"')");
 		String setting = null;
 		try {

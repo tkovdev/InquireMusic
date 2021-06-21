@@ -28,15 +28,12 @@ public class Program {
 
 	/**
 	 * Primary entry point to start the application. Creates the primary view, & controller.
-	 * provides the primary controller the services that were configured
+	 * provides the primary controller & the services that were configured
 	 * @param args
 	 * @see MainView
 	 * @see MainController
 	 */
 	public static void main(String[] args) {
-		 //HashMap<String, Object> _services = Program.configureServices();
-		 
-		
 		  EventQueue.invokeLater(new Runnable() {
 			private HashMap<String, Object> _services = Program.configureServices();
 			public void run() {

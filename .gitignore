@@ -2,3 +2,4 @@ token-storage.json
 src/main/resources/configuration.settings
 .settings/*
 target/*
+/target/

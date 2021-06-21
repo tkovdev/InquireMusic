@@ -56,7 +56,6 @@ public class TrackLogic {
 		result = new Track();
 		result.setId(res.getString("id"));
 		result.setName(res.getString("name"));
-		result.setPopularity(Double.parseDouble(res.get("popularity").toString()));
 		result.setTrackNumber(res.getInt("track_number"));
 		result.setDuration(Long.parseLong(res.get("duration_ms").toString()));
 		result.setExplicit(res.getBoolean("explicit"));

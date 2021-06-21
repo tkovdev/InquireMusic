@@ -14,7 +14,6 @@ public class Album {
 	private String label;
 	private String type;
 	private LocalDate releaseDate;
-	private double popularity;
 	private int totalTracks;
 	
 	private ArrayList<Track> tracks;
@@ -34,18 +33,16 @@ public class Album {
 	 * @param label
 	 * @param type
 	 * @param releaseDate
-	 * @param popularity
 	 * @param totalTracks
 	 * @param artist
 	 * @param tracks
 	 */
-	public Album(String id, String name, String label, String type, LocalDate releaseDate, double popularity, int totalTracks, Artist artist, ArrayList<Track> tracks) {
+	public Album(String id, String name, String label, String type, LocalDate releaseDate, int totalTracks, Artist artist, ArrayList<Track> tracks) {
 		 this.id = id;
 		 this.name = name;
 		 this.label = label;
 		 this.type = type;
 		 this.releaseDate = releaseDate;
-		 this.popularity = popularity;
 		 this.totalTracks = totalTracks;
 		 this.tracks = tracks;
 		 this.artist = artist;
@@ -63,7 +60,6 @@ public class Album {
 		result += "lable: " + this.label + "\n";
 		result += "type: " + this.type + "\n";
 		result += "release date: " + this.releaseDate + "\n";
-		result += "popularity: " + this.popularity + "\n";
 		result += "total tracks: " + this.totalTracks + "\n";
 		result += "artist: " + this.artist + "\n";
 		result += "tracks: " + this.tracks + "\n";
@@ -84,7 +80,6 @@ public class Album {
 		result += "<ul>";
 		result += "<li> <b>Released:</b> " + (this.releaseDate != null ? this.releaseDate : "n/a") + "</li>";
 		result += "<li> <b>Type:</b> " + (this.type != null ? this.type : "n/a") + "</li>";
-		result += "<li> <b>Popularity:</b> " + (this.popularity != 0 ? this.popularity : "n/a") + "</li>";
 		result += "<li> <b>Number of Tracks:</b> " + this.totalTracks + "</li>";
 		result += "</ul>";
 		return result;
@@ -108,10 +103,6 @@ public class Album {
 
 	public LocalDate getReleaseDate() {
 		return releaseDate;
-	}
-
-	public double getPopularity() {
-		return popularity;
 	}
 
 	public int getTotalTracks() {
@@ -144,10 +135,6 @@ public class Album {
 
 	public void setReleaseDate(LocalDate releaseDate) {
 		this.releaseDate = releaseDate;
-	}
-
-	public void setPopularity(double popularity) {
-		this.popularity = popularity;
 	}
 
 	public void setTotalTracks(int totalTracks) {
