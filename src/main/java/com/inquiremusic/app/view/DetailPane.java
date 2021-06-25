@@ -8,12 +8,17 @@ import java.awt.Insets;
 import javax.swing.SwingConstants;
 import javax.swing.JTabbedPane;
 
+/**
+ * Right-hand panel in MainView that holds the tabbed pane to display selected results
+ * @author Thomas P. Kovalchuk
+ *
+ */
 public class DetailPane extends JPanel {
 
 	protected JLabel lblDetail;
 	protected JTabbedPane tabbedDetailPaneTab;
 	/**
-	 * Create the panel.
+	 * DetailPane creates a new DetailPane to house a label & tabbedpane
 	 */
 	public DetailPane() {
 		GridBagLayout gridBagLayout = new GridBagLayout();

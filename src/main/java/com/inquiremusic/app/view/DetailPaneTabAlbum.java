@@ -6,11 +6,16 @@ import javax.swing.JEditorPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+/**
+ * DetailPaneTabAlbum houses the selected results by using a JEditorPane to display read-only html
+ * @author Thomas P. Kovalchuk
+ *
+ */
 public class DetailPaneTabAlbum extends JPanel {
 	protected JEditorPane textArea;
 	protected JScrollPane textScrollable;
 	/**
-	 * Create the panel.
+	 * DetailPaneTabAlbum creates a new tab with a scrollpane & editorpane to display html.
 	 */
 	public DetailPaneTabAlbum() {
 		setLayout(new GridLayout(1, 0, 0, 0));

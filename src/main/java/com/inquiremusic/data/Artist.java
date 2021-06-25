@@ -32,6 +32,7 @@ public class Artist {
 	 * @param popularity
 	 * @param albums
 	 * @param tracks
+	 * @param topTracks
 	 */
 	public Artist(String id, String name, ArrayList<String> genres, double popularity, ArrayList<Album> albums, ArrayList<Track> tracks, ArrayList<Track> topTracks) {
 		this.id = id;

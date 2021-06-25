@@ -13,7 +13,11 @@ import javax.swing.border.LineBorder;
 import com.inquiremusic.app.model.ComboItem;
 import com.inquiremusic.app.model.ListItem;
 
-
+/**
+ * MainPanel houses all components of the application to display UI.
+ * @author Thomas P. Kovalchuk
+ *
+ */
 public class MainPanel extends JPanel{	
 	protected JTextField textSearch;
 	protected JTextArea textStorage;
@@ -24,6 +28,9 @@ public class MainPanel extends JPanel{
 	protected JButton btnSearch;
 	protected DetailPane panelDetail;
 	
+	/**
+	 * MainPanel creates a new JPanel that formats the layout and adds all the components of the UI to display
+	 */
 	public MainPanel(){
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{29, 100, 0, 0, 0, 33, 29, 0};
@@ -93,6 +100,9 @@ public class MainPanel extends JPanel{
 		
 		initialize();
 	}
+	/**
+	 * Setup the dropdown
+	 */
 	private void initialize() {
 		ComboItem[] options = new ComboItem[3];
 		options[0] = new ComboItem(0, "Artist");

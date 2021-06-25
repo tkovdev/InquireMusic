@@ -16,7 +16,7 @@ import com.inquiremusic.logic.ArtistLogic;
 import com.inquiremusic.logic.TrackLogic;
 
 /**
- * ArtistController - handles front-end logic to request all artist related details and display them in each tab of the selected results.
+ * ArtistController - handles front-end logic to request all artist related details and display them in each tab of the selected results or scrollpane.
  * @author Thomas P. Kovalchuk
  *
  */
@@ -26,6 +26,14 @@ public class ArtistController {
 	private final AlbumLogic _albumLogic;
 	private final TrackLogic _trackLogic;
 	
+	/**
+	 * Creates a new ArtistController object, has 4 dependencies, the MainView, TrackLogic, ArtistLogic, & AlbumLogic
+	 * @param view
+	 * @param services
+	 * @param trackLogic
+	 * @param artistLogic
+	 * @param albumLogic
+	 */
 	public ArtistController(MainView view, TrackLogic trackLogic, ArtistLogic artistLogic, AlbumLogic albumLogic) {
 		this._artistLogic = artistLogic;
 		this._albumLogic = albumLogic;

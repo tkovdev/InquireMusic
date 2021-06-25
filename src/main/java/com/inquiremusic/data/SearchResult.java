@@ -2,24 +2,42 @@ package com.inquiremusic.data;
 
 import java.util.ArrayList;
 
+/**
+ * SearchResult stores search related information; provides all getters & setters, overrides toString, & provides toHtmlString methods.
+ * @author Thomas P. Kovalchuk
+ *
+ */
 public class SearchResult {
 	private String type;
 	private ArrayList<Album> albums;
 	private ArrayList<Artist> artists;
 	private ArrayList<Track> tracks;
 	
+	/**
+	 * SearchResult object that provides a blank instance of the object, which enables setting various data as needed.
+	 */
 	public SearchResult() {
 		this.albums = new ArrayList<Album>();
 		this.artists = new ArrayList<Artist>();
 		this.tracks = new ArrayList<Track>();
 	}
 	
+	/**
+	 * SearchResult object that provides a filled instance of the object.
+	 * @param albums
+	 * @param artists
+	 * @param tracks
+	 */
 	public SearchResult(ArrayList<Album> albums, ArrayList<Artist> artists, ArrayList<Track> tracks) {
 		this.albums = albums;
 		this.artists = artists;
 		this.tracks = tracks;
 	}
 
+	/**
+	 * toString override to display contents of object.
+	 * @return String - provides all data pertaining to the object in a minimally formated way
+	 */
 	@Override
 	public String toString() {
 		String result = "";

@@ -3,3 +3,4 @@ src/main/resources/configuration.settings
 .settings/*
 target/*
 /target/
+src/.project

@@ -2,10 +2,15 @@ package com.inquiremusic.app.view;
 
 import javax.swing.JTabbedPane;
 
+/**
+ * DetailPaneTab houses each tab of the selected results and is set by each controller (Artist, Album, & Track)
+ * @author Thomas P. Kovalchuk
+ *
+ */
 public class DetailPaneTab extends JTabbedPane {
 	
 	/**
-	 * Create the panel.
+	 * DetailPaneTab creates a new tabbed pane with no special display formatting, houses the individual tabs.
 	 */
 	public DetailPaneTab() {
 	}

@@ -44,7 +44,7 @@ public class MainController {
 	private final TrackController _trackController;
 	
 	/**
-	 * Creates a new MainController object, has 3 dependencies, a View, a Model, & a HashMap of available services.
+	 * Creates a new MainController object, has 2 dependencies, a View & a HashMap of available services.
 	 * @param view
 	 * @param services
 	 */
